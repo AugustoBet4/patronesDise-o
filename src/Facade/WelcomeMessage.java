@@ -1,6 +1,6 @@
 package Facade;
 public class WelcomeMessage {
     public WelcomeMessage(){
-        System.out.println("Welcome to this BANK.");
+        System.out.println("Bienvenido a su Banco! :v.");
     }
 }

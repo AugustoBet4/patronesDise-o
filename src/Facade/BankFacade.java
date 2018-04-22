@@ -23,16 +23,20 @@ public class BankFacade {
 
     }
 
-    private int getAccountNumber() { return accountNumber; }
+    private int getAccountNumber() {
+    	return accountNumber;
+    }
 
-    private int getSecurityCode() { return securityCode; }
+    private int getSecurityCode() {
+    	return securityCode;
+    }
 
     public void withdrawCash(double cashAmount){
 
         if(canWithdraw(cashAmount)) {
-            System.out.println("Transaction Complete\n");
+            System.out.println("Transacción Completada\n");
         } else {
-            System.out.println("Transaction Failed\n");
+            System.out.println("Transacción Fallida\n");
         }
 
     }
@@ -41,9 +45,9 @@ public class BankFacade {
     public void depositCash(double cashAmount){
         if(canDeposit(cashAmount)) {
             fundsChecker.makeDeposit(cashAmount);
-            System.out.println("Transaction Complete\n");
+            System.out.println("Transacción Completada\n");
         } else {
-            System.out.println("Transaction Failed\n");
+            System.out.println("Transacción Fallida\n");
         }
     }
 
