@@ -5,6 +5,7 @@ public class ATMMachine implements GetATMData {
 
     public ATMMachine(int cashInMachine){
         this.cashInMachine = cashInMachine;
+        
     }
     public int getCashInMachine() {
         return cashInMachine;
