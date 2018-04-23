@@ -2,8 +2,8 @@ package Facade;
 
 public class BankFacade {
 
-    private int accountNumber;
-    private int securityCode;
+    private String accountNumber;
+    private String securityCode;
 
     private AccountNumberCheck accountChecker;
     private SecurityCodeCheck codeChecker;
@@ -11,7 +11,7 @@ public class BankFacade {
 
     private WelcomeMessage bankWelcome;
 
-    public BankFacade(int accountNumber, int securityCode){
+    public BankFacade(String accountNumber, String securityCode){
 
         this.accountNumber = accountNumber;
         this.securityCode  = securityCode;
@@ -23,11 +23,11 @@ public class BankFacade {
 
     }
 
-    private int getAccountNumber() {
+    private String getAccountNumber() {
     	return accountNumber;
     }
 
-    private int getSecurityCode() {
+    private String getSecurityCode() {
     	return securityCode;
     }
 
@@ -52,14 +52,18 @@ public class BankFacade {
     }
 
     private boolean canWithdraw(double cashAmount){
-        return accountChecker.isAccountActive(getAccountNumber()) &&
-                codeChecker.isCodeCorrect(getSecurityCode()) &&
+        return accountChecker.isAccountActive(this.accountNumber) &&
+                codeChecker.isCodeCorrect(this.securityCode) &&
                 fundsChecker.haveEnoughMoney(cashAmount);
     }
 
     private boolean canDeposit(double cashAmount){
-        return accountChecker.isAccountActive(getAccountNumber()) &&
-                codeChecker.isCodeCorrect(getSecurityCode());
+        return accountChecker.isAccountActive(this.accountNumber) &&
+                codeChecker.isCodeCorrect(this.securityCode);
+    }
+    public boolean isUser(){
+    	return accountChecker.isAccountActive(this.accountNumber) &&
+                codeChecker.isCodeCorrect(this.securityCode);
     }
 
 }

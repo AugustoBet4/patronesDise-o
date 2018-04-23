@@ -1,14 +1,15 @@
 package Facade;
 
-public class SecurityCodeCheck {
+public class SecurityCodeCheck{
+	
 
-    private int securityCode = 1234;
+    public String getSecurityCode() {
+    	return "76215591";
+    }
 
-    public int getSecurityCode() { return securityCode; }
+    public boolean isCodeCorrect(String securityCode){
 
-    public boolean isCodeCorrect(int securityCode){
-
-        if(securityCode == getSecurityCode()) {
+        if(securityCode.equals(getSecurityCode())) {
             return true;
         } else {
             return false;

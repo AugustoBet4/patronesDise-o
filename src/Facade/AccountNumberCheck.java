@@ -2,12 +2,14 @@ package Facade;
 
 public class AccountNumberCheck {
 
-    private int accountNumber = 1234567890;
+    private String accountNumber = "9896776";
 
-    public int getAccountNumber() { return accountNumber; }
+    public String getAccountNumber() {
+    	return accountNumber;
+    }
 
-    public boolean isAccountActive(int accountNumberToCheck){
-        if(accountNumberToCheck == getAccountNumber()) {
+    public boolean isAccountActive(String accountNumber){
+        if(accountNumber.equals(getAccountNumber())) {
             return true;
         } else {
             return false;
