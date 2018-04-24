@@ -3,15 +3,16 @@ package Proxy;
 import javax.swing.JOptionPane;
 
 public class ATMClient {
-
+	static int cash = 1000;
     public static void main(String[] args) {
-
+    	while(true) {
         
-    	GetATMData realAtmMachine = new ATMMachine(1000);
+    	GetATMData realAtmMachine = new ATMMachine(cash);
         GetATMData atmProxy = new ATMProxy(realAtmMachine);
         
         ventanas(atmProxy.getCashInMachine());
-        System.out.println("ATM Machine, cash available: " + atmProxy.getCashInMachine());
+       // System.out.println("ATM Machine, cash available: " + atmProxy.getCashInMachine());
+    	}
         
     }
     public static void ventanas(int a) {
@@ -24,6 +25,7 @@ public class ATMClient {
     	}else {
     		if(opcion == 1) {
     			int nuevo = Integer.parseInt(JOptionPane.showInputDialog("Actualizar efectivo de la maquina"));
+    			cash = nuevo;
     			GetATMData realAtmMachine = new ATMMachine(nuevo);
     			
     		}else {
